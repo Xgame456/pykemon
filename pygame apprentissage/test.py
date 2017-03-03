@@ -29,6 +29,8 @@ while continuer:
                         pygame.quit()
                         
                 if event.type == KEYDOWN:
+			if event.key == K_ESCAPE:
+				fentre = pygame.display.set_mode((640,480))
 			if event.key == K_F4:
 				fenetre = pygame.display.set_mode((640,480),pygame.FULLSCREEN)
                         if event.key == K_RIGHT:
