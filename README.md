@@ -6,3 +6,5 @@ Raiarii: Si vous voulez changer de fond d'écran renommer votre photo par "backg
 Dylan : No prob !
 Raiarii : Yo mise a jour du prgrm ajout de la fonction plein ecran et petit écran pour passer mode plein écran appuyer sur F4 et petit écran appuyer sur Echap. Je pense qu'on ne pourra pas sauvegarder avec pygame parce que j'ai beau chercher je trouve pas lol :/
 Raiarii : Yop encore moi . Bon si vous pouvez installer la librairie Pygcurse pour le projet, pour installer sur window vous avez juste à passer via le cmd en mode admin et a écrire:  pip install Pygcurse       
+Lundi 20 mars 2017
+Hiro : bonjour les jeunes je viens d'upload une image du personnage principale avec les mouvements de tous les points de vue, si vous voulez une image d'un mouvement du personnage, aller sur paint et decouper le mouvement que vous voulez aprés on pourra tester sur le programme ce que sa donne hihi ! à vos clavier les hackers...
