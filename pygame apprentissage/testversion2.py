@@ -15,10 +15,10 @@ pygame.init()
 #cam.set(arii.x, arii.y)
 
 #Ouverture de la fenêtre Pygame
-fenetre = pygame.display.set_mode((500,400))
+fenetre = pygame.display.set_mode((800,600))
 
 #Icone
-icone = pygame.image.load("icone.jpg").convert()
+icone = pygame.image.load("icone.png")
 pygame.display.set_icon(icone)
 
 #Titre
