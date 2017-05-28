@@ -11,3 +11,4 @@ Hiro : bonjour les jeunes je viens d'upload une image du personnage principale a
 Mercredi 26 Avril 2017
 Raiarii : C'est bon les gars le dossier transpa avec les perso sans le truc blanc degueulasse est sur le site....
 Raiarii : Yop les amis c'est bon j'ai uploadé un nouveau fichier Classes et un fichier Pykemon mtn dans le jeu vous pourez voir un portail pour changer de map :D
+Raiarii : Je vien de réparer le code pour la page d'aacueil il est fonctionnel :D
