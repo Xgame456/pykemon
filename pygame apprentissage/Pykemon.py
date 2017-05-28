@@ -20,8 +20,7 @@ titre_fenetre = ("Pykemon")
 pygame.display.set_caption(titre_fenetre)
 
 #Chargement et collage du fond
-fond = pygame.image.load("map.png").convert()
-fenetre.blit(fond, (0,0))
+
 
 #Chargement du personnage
 arii = Perso("droite.png","gauche.png","haut.png","bas.png")
@@ -37,58 +36,61 @@ pygame.key.set_repeat(400, 30)
 #BOUCLE INFINIE
 continuer = 1
 while continuer:
-        pygame.time.Clock().tick(30)
-        for event in pygame.event.get():
-                #Si on clique sur la croix, pygame quitte.
-                if event.type == QUIT:
-                        pygame.quit()
-                        
-                #On attente qu'un touche spécifique du clavier soit présser
-                elif event.type == KEYDOWN:
-                        
-                        #Si la touche F4 est présser le jeu passe en plein écran
-                        if event.key == K_F4:
-                                fenetre = pygame.display.set_mode((640,480),pygame.FULLSCREEN)
-                                
-                        #Si la touche Echap est présser le jeu revien an l'écran normal
-                        if event.key == K_ESCAPE:
-                                fenetre = pygame.display.set_mode((640,480))
-                                
-                        #Si la fleche de droite est appuyer, le perso se déplace vers la droite
-                        elif event.key == K_RIGHT:
-                                arii.deplacer('droite')
-                                
-                        #Si la fleche de gauche est appuyer, le perso se déplace vers la gauche
-                        elif event.key == K_LEFT:
-                                arii.deplacer('gauche')
-                                
-                        #Si la fleche du haut est appuyer, le perso se déplace vers le haut
-                        elif event.key == K_UP:
-                                arii.deplacer('haut')
-                                
-                        #Si la fleche du bas est appuyer, le perso se déplace vers le bas
-                        elif event.key == K_DOWN:
-                                arii.deplacer('bas')
-        #délimitation d'une zone                       
-        if arii.x > 500 and arii.x < 800 and arii.y >300 and arii.y < 527:
-                
-                #Si arii est dans la zonne l'arriere plan du jeu change
-                fond = pygame.image.load("background.Jpg").convert()
-                
-        #On efface l'ancien arriere plan
-        fenetre.fill((0,0,0))
-        
-        #On "colle" l'arriere plan
-        fenetre.blit(fond, (0,0))
-        
-        #On colle le perso suivant sa direction
-        fenetre.blit(arii.direction, (arii.x, arii.y))
-        
-        #On colle le portail au coordonnée x=500 et y=300
-        fenetre.blit(téléportation, (500, 300))
-        
-        #rafraichissemnt de l'écran
+        accueil = pygame.image.load("accueil.jpg").convert()
+        fenetre.blit(accueil, (0,0))
         pygame.display.flip()
+        continuer_jeu = 1
+        continuer_accueil = 1
+        
+        while continuer_accueil:
+                pygame.time.Clock().tick(30)
+                for event in pygame.event.get():
+                        if event.type == QUIT:
+                                pygame.quit()
+                        elif event.type == KEYDOWN:
+                                if event.key == K_F1:
+                                        pygame.display.flip()
+                                        continuer_accueil = 0
+                                        choix = 1
+                                        fenetre.fill((0,0,0))
+                                        fond = pygame.image.load("map.png").convert()
+                                        fenetre.blit(fond, (0,0))
+                           
+        while choix :
+                for event in pygame.event.get():
+                        if event.type == QUIT:
+                                pygame.quit()
+                                
+                        elif event.type == KEYDOWN:
+                                if event.key == K_DOWN:
+                                        arii.deplacer('bas')
+                                elif event.key == K_UP:
+                                        arii.deplacer('haut')
+                                
+                                elif event.key == K_LEFT:
+                                        arii.deplacer('gauche')
+                                        
+                                elif event.key == K_RIGHT:
+                                        arii.deplacer('droite')
+                                        
+                                if event.key == K_ESCAPE:
+                                        fenetre = pygame.display.set_mode((800,600))
+                                        
+                                if event.key == K_F4:
+                                        fenetre = pygame.display.set_mode((800,600),pygame.FULLSCREEN)
+                                
+                      
+                                
+                                                
+                                
+                       
+                if arii.x > 500 and arii.x < 800 and arii.y >300 and arii.y < 527:
+                        fond = pygame.image.load("background.Jpg").convert()
+                fenetre.fill((0,0,0))
+                fenetre.blit(fond, (0,0))
+                fenetre.blit(arii.direction, (arii.x, arii.y))
+                fenetre.blit(téléportation, (500, 300))
+                pygame.display.flip()
        
                 
                
