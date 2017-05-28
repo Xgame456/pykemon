@@ -1,53 +1,59 @@
 
 import pygame
-from pygame.locals import * 
-
-centre_x = -1
-centre_y = -1
-def rot_center(image, rect, angle):
-        #rotate une image va le garder au centre
-        rot_image = pygame.transform.rotate(image, angle)
-        rot_rect = rot_image.get_rect(center=rect.center)
-        return rot_image,rot_rect
-
-def spawn():
-        x = randint(0,9)
-        y = randint(0,9)
-        #while(maps.map_1[y][x] ==== 5):
-               # x = randint(0,9)
-               # y = randint(0,9)
-        #retunr x * 800 + centre_x, y*600 + centre_y
-        
+from pygame.locals import *
+           
 class Perso:
+        "Création du personnage"
         def __init__(self, droite, gauche, haut, bas):
+                #sprites du personnages
                 self.droite = pygame.image.load(droite).convert_alpha()
                 self.gauche = pygame.image.load(gauche).convert_alpha()
                 self.haut = pygame.image.load(haut).convert_alpha()
                 self.bas = pygame.image.load(bas).convert_alpha()
-                #self.fenetre = pygame.dislay.get_surface()
-                #self.fond = self.fenetre.get_rect()
-                
 		#Position du personnage en cases et en pixels
-                self.case_x = 0
-                self.case_y = 0
-                self.x = 200
-                self.y = 250
+                self.x = 0
+                self.y = 0
 		#Direction par défaut
                 self.direction = self.bas
         def deplacer(self, direction):
-                if direction == 'bas': 
+                
+                #direction vers le bas
+                if direction == 'bas':
+                        #On déplace le perso de 5 pixel sur l'axe y
+                        self.y += 5
+                        #Changement de l'image de base
                         self.direction = self.bas
-                        self.y += 3           
+                        
+                        #direction vers le haut
                 if direction == 'haut':
+                        #On déplace le perso de -5 pixel sur l'axe y
+                        self.y -= 5
+                        #Changement de l'image de base
                         self.direction = self.haut
-                        self.y -= 3
-                if direction == 'gauche':    
+                        
+                        #direction vers la gauche
+                if direction == 'gauche':
+                        #On déplace le perso de -5 pixel sur l'axe x
+                        self.x -= 5
+                        #Changement de l'image de base
                         self.direction = self.gauche
-                        self.x -= 3		
+                        
+                        #direction vers la droite
                 if direction == 'droite':
+                        #On déplace le perso de 5 pixel sur l'axe x
+                        self.x += 5
+                        #Changement de l'image de base
                         self.direction = self.droite
-                        self.x += 3
 		
+		
+		
+		
+		
+		
+		
+		
+
+                
 
 	
 
